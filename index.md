@@ -1,8 +1,6 @@
-## Les vulnérabilités hardware expliquées, avec un focus sur Meltdown & Spectre
+# NTIC : les vulnérabilités informatiques matérielles
 
-You can use the [editor on GitHub](https://github.com/tduboudi/Meltdown-Spectre/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+L'objectif de cette veille technologique était de récolter des informations concernant les vulnérabilitiés informatiques qui ont pour origines des défauts directement liés au matériel ou aux composants informatiques (processeur, RAM, etc.). La présentation qui suit précise un certain nombre de points sur le paysage actuel en cyber-sécurité, avant d'aborder le sujet des vulnérabilités matérielles et de détailler le fonctionnement des failles récemment découverte **Meltdown et Spectre**.
 
 ### Markdown
 
