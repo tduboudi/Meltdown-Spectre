@@ -4,9 +4,12 @@ L'objectif de cette veille technologique était de récolter des informations co
 
 # Panorama cyber-sécurité et cyber-menaces actuel  
 
+Les cyber-attaques constituent le quotidien des entreprises ou des organisations, à partir du moment où leur système d'informations atteint une certaine importance. Ces attaques peuvent avoir plusieurs origines et plusieurs objectifs : les attaques peuvent, par exemple, venir d'un virus introduit dans le SI ou bien être mené par ingénierie sociale et avoir pour objectif le vol de données sensibles ou bien l'atteinte de services de l'organisation. 
+
+
 ## Les cyber-attaques : une importante source de pertes financières
 
----> On parle des principaux exemples marquants
+
 
 ---> Des statistiques
 
