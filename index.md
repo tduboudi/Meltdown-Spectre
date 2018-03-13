@@ -7,6 +7,7 @@ L'objectif de cette veille technologique était de récolter des informations co
 ## Les cyber-attaques : une importante source de pertes financières
 
 ---> On parle des principaux exemples marquants
+
 ---> Des statistiques
 
 ## Les principaux acteurs du milieu
@@ -14,14 +15,19 @@ L'objectif de cette veille technologique était de récolter des informations co
 ---> L'ère du hacker dans son grenier chez ses parents est terminé
 
 ---> Les acteurs étatiques : 
+
 ------> Quelques organismes comme l'ANSSI
+
 ------> Les services de renseignement
 
 ---> Les acteurs privés :
+
 ------> Beaucoup d'entreprises actives dans le domaine de la cyber-sécurité / défense
+
 ------> Quelques fabricants de logiciels espions
 
 ---> Les acteurs illégaux
+
 ------> Forte structuration à l'heure actuelle
 
 ## Les grandes familles de vulnérabilités
