@@ -4,16 +4,18 @@ L'objectif de cette veille technologique était de récolter des informations co
 
 # Panorama cyber-sécurité et cyber-menaces actuel  
 
-Les cyber-attaques constituent le quotidien des entreprises ou des organisations, à partir du moment où leur système d'informations atteint une certaine importance. Ces attaques peuvent avoir plusieurs origines et plusieurs objectifs : les attaques peuvent, par exemple, venir d'un virus introduit dans le SI ou bien être mené par ingénierie sociale et avoir pour objectif le vol de données sensibles ou bien l'atteinte de services de l'organisation. 
-
+Les cyber-attaques constituent le quotidien des entreprises ou des organisations, à partir du moment où leur système d'informations atteint une certaine importance. Ces attaques peuvent avoir plusieurs origines et plusieurs objectifs : les attaques peuvent, par exemple, venir d'un virus introduit dans le SI ou bien être mené par ingénierie sociale (phishing) et avoir pour objectif le vol de données sensibles ou bien l'endommagement de services de l'organisation. 
 
 ## Les cyber-attaques : une importante source de pertes financières
 
-
+Dans tous les cas, il résulte d'une attaque réussie une perte financière pour l'entreprise ou l'organisme ciblé : des sanctions légales peuvent être prises si l'attaque résulte d'une infraction aux réglementations, l'entreprise souffre aussi au niveau de son image de marque et une attaque peut décourager les investisseurs ou avoir un impact négatif sur la cotation en bourse de l'entreprise. Enfin, les attaques ont souvent des impacts financiers direct : leaking de films avant leur sortie officielle dans le cas de SONY, paralysie totale de l'organisation dans le cas de la NHS britannique à cause d'un ransomware...[faut justifier ça]
 
 ---> Des statistiques
 
 ## Les principaux acteurs du milieu
+
+
+L'image hollywoodienne du hacker travaillant seul dans son grenier n'est plus d'actualité. Du côté offensif se trouvent un certain nombre de groupes, plus ou moins étatiques, bien organisés et bien formés, qui sont à l'origine des attaques utilisant des vulnérabilités inconnues ou 0-day. Les attaques reposant sur le phishing ou les opérations d'ingénierie sociale sont le fruit de groupes moins structurés. [faut justifier ça]
 
 ---> L'ère du hacker dans son grenier chez ses parents est terminé
 
@@ -34,6 +36,11 @@ Les cyber-attaques constituent le quotidien des entreprises ou des organisations
 ------> Forte structuration à l'heure actuelle
 
 ## Les grandes familles de vulnérabilités
+
+Une vulnérabilité, ou une faille, correspond à une utilisation non prévue d'un logiciel (ou d'un composant) et qui permet d'obtenir un effet non prévu, potentiellement intéressant pour quelqu'un de malveillant. Il en existe de plusieurs types, qui permettent chacune d'obtenir des choses différentes sur le système ciblé : prise de contrôle totale, accès aux données stockées et manipulées, utilisation comme relai pour communiquer avec d'autres systèmes.
+
+
+
 
 ---> Qu'est ce qu'une faille ? Une utilisation non prévue d'un logiciel qui permet de faire des choses potentiellement malveillantes...
 
