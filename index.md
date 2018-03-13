@@ -31,24 +31,64 @@ L'objectif de cette veille technologique était de récolter des informations co
 ------> Forte structuration à l'heure actuelle
 
 ## Les grandes familles de vulnérabilités
+
+---> Qu'est ce qu'une faille ? Une utilisation non prévue d'un logiciel qui permet de faire des choses potentiellement malveillantes...
+
+---> Voir les slides et en rajouter quelques unes.
+
+
 ## Vers une prise de conscience globale du problème ?
+
+---> Un constat : la plupart des problèmes ont pour origine un problème se trouvant entre la chaise et le clavier. Avec de bonnes pratiques, on peut éviter 99% des attaques, mais ça ne semble pas encore bien connu... Cf Trustico, dernier en date.
+
+
 
 
 # Une petite minorité de vulnérabilités : les failles matérielles
 
 ## Des failles particulières
+
+---> dont l'origine n'est pas un logiciel mais un composant informatique
+
 ## Difficile à trouver, difficile à exploiter et difficile à corriger
-## Mais qui pourraient devenir plus fréquente ...
+
+---> Elles nécessitent de comprendre le fonctionnement des composants à un niveau très profond. Il faut des équipes et des compétences spécifiques que l'on ne trouve pas partout.
+
+
+## Mais qui pourraient devenir plus fréquentes ...
+
+---> avec le développement de l'IoT et la prise en compte de la sécurité de manière assez légère on va dire. L'augmentation de composants spécifiques, lâchés sur le marché le plus rapidement possible va dans ce sens.
+
+---> Parler de l'actualité des failles hardware si je trouve quelque chose à dire
 
 
 # Meltdown & Spectre
 
 ## Quelques connaissances utiles
+
+---> Exécution spéculative
+
+---> Mémoire caches
+
+---> Isolation des processus
+
+
 ## Meltdown
+
+---> Reprendre slides et articles
+
 ## Spectre
+
+---> Reprendre articles
+
 ## Correction
+
+---> Rapidement
+
+
 ## Cas d'utilisation
 
+---> Expliquer le javascript et les VMs
 
 
 
