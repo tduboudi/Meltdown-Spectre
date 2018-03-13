@@ -2,7 +2,51 @@
 
 L'objectif de cette veille technologique était de récolter des informations concernant les vulnérabilitiés informatiques qui ont pour origines des défauts directement liés au matériel ou aux composants informatiques (processeur, RAM, etc.). La présentation qui suit précise un certain nombre de points sur le paysage actuel en cyber-sécurité, avant d'aborder le sujet des vulnérabilités matérielles et de détailler le fonctionnement des failles récemment découverte **Meltdown et Spectre**.
 
-### Markdown
+# Panorama cyber-sécurité et cyber-menaces actuel  
+
+## Les cyber-attaques : une importante source de pertes financières
+## Les principaux acteurs du milieu
+## Les grandes familles de vulnérabilités
+## Vers une prise de conscience globale du problème ?
+
+
+# Une petite minorité de vulnérabilités : les failles matérielles
+
+## Des failles particulières
+## Difficile à trouver, difficile à exploiter et difficile à corriger
+## Mais qui pourraient devenir plus fréquente ...
+
+
+# Meltdown & Spectre
+
+## Quelques connaissances utiles
+## Meltdown
+## Spectre
+## Correction
+## Cas d'utilisation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
