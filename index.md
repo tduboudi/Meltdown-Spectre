@@ -24,6 +24,7 @@ Mondialement, les données sont les suivantes :
 
 ([source](https://www.accenture.com/t20171006T095146Z__w__/us-en/_acnmedia/PDF-62/Accenture-2017CostCybercrime-US-FINAL.pdf))
 
+On constate bien une augmentation généralisée du phénomène, en terme de coûts associés à ces cyber-attaques.
 
 ## Les principaux acteurs du milieu
 
