@@ -12,8 +12,15 @@ Les cyber-attaques constituent le quotidien de toutes les organisations, à part
 
 Dans tous les cas, il résulte d'une attaque réussie une perte financière pour l'entreprise ou l'organisme ciblé : des sanctions légales peuvent être prises si l'attaque résulte d'une infraction aux réglementations, l'entreprise souffre aussi au niveau de son image de marque et une attaque peut décourager les investisseurs ou avoir un impact négatif sur la cotation en bourse de l'entreprise. Enfin, les attaques ont souvent des impacts financiers direct : mise en ligne de 5 films avant leur sortie officielle dans le cas de Sony Pictures (coût total de l'attaque estimé à 101.6 millions de dollars, dont 45 pour la réparation des dégats [source](https://pedagogie.ec-lyon.fr/claroline/backends/download.php?url=LzIwMTctMjAxOC9Db3Vyc19T6WN1cml06V9kdV9TSV92Mi5wZGY%3D&cidReset=true&cidReq=S9_17160), vague d'attaques dirigées contre des établissements bancaires : 80 millions de dollars détournés [source](http://www.lemonde.fr/technologies/article/2012/06/26/80-millions-de-dollars-detournes-dans-une-cyberattaque-visant-des-banques_1724984_651865.html)...
 
-En matière de cyber-criminalité, la tendance est globalement à la hausse : 
+En matière de cyber-criminalité, la tendance est globalement à la hausse et le secteur se porte bien :
 
+D'après PwC ([source](https://www.pwc.fr/fr/espace-presse/communiques-de-presse/2018/fevrier/la-cybercriminalite-devient-la-fraude-la-plus-frequemment-signal.html)) 60% des entreprises françaises ont été victimes de cyber-criminalité sur les 2 dernières années. En deux ans, il s'agit donc d'une progression de 7 points (c'était 53% en 2016).
+
+Mondialement, les données sont les suivantes : 
+
+![Image](https://github.com/tduboudi/NTIC-Veille-technologique/blob/master/per_country_increase.png?raw=true)
+
+[source](https://www.accenture.com/t20171006T095146Z__w__/us-en/_acnmedia/PDF-62/Accenture-2017CostCybercrime-US-FINAL.pdf)
 
 
 ## Les principaux acteurs du milieu
