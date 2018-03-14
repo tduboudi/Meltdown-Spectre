@@ -8,7 +8,7 @@ Les cyber-attaques constituent le quotidien des entreprises ou des organisations
 
 ## Les cyber-attaques : une importante source de pertes financières
 
-Dans tous les cas, il résulte d'une attaque réussie une perte financière pour l'entreprise ou l'organisme ciblé : des sanctions légales peuvent être prises si l'attaque résulte d'une infraction aux réglementations, l'entreprise souffre aussi au niveau de son image de marque et une attaque peut décourager les investisseurs ou avoir un impact négatif sur la cotation en bourse de l'entreprise. Enfin, les attaques ont souvent des impacts financiers direct : leaking de films avant leur sortie officielle dans le cas de SONY, paralysie totale de l'organisation dans le cas de la NHS britannique à cause d'un ransomware...[faut justifier ça]
+Dans tous les cas, il résulte d'une attaque réussie une perte financière pour l'entreprise ou l'organisme ciblé : des sanctions légales peuvent être prises si l'attaque résulte d'une infraction aux réglementations, l'entreprise souffre aussi au niveau de son image de marque et une attaque peut décourager les investisseurs ou avoir un impact négatif sur la cotation en bourse de l'entreprise. Enfin, les attaques ont souvent des impacts financiers direct : leaking de films avant leur sortie officielle dans le cas de Sony Pictures (coût estimé à 101.6 millions de dollars, dont 15 pour la réparation des dégats), paralysie totale de l'organisation dans le cas de la NHS britannique à cause du ransomware WannaCry...[faut justifier ça]
 
 ---> Des statistiques
 
