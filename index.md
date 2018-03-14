@@ -2,6 +2,8 @@
 
 L'objectif de cette veille technologique était de récolter des informations concernant les vulnérabilitiés informatiques qui ont pour origines des défauts directement liés au matériel ou aux composants informatiques (processeur, RAM, etc.). La présentation qui suit précise un certain nombre de points sur le paysage actuel en cyber-sécurité, avant d'aborder le sujet des vulnérabilités matérielles et de détailler le fonctionnement des failles récemment découverte **Meltdown et Spectre**.
 
+Le domaine de la cyber-sécurité est un champ très actif en informatique, avec chaque jour de nouvelles vulnérabilités corrigées, de nouvelles attaques, etc. Cependant, le domaine des vulnérabilités matérielles est beaucoup plus restreint et la seule activité qu'il y a eu en rapport avec les failles hardware pendant la durée de cette veille était liée, soit à l'apparition de nouvelles variantes de Meltdown et Spectre, soit aux correctifs développés.
+
 # Panorama cyber-sécurité et cyber-menaces actuel  
 
 Les cyber-attaques constituent le quotidien des entreprises ou des organisations, à partir du moment où leur système d'informations atteint une certaine importance. Ces attaques peuvent avoir plusieurs origines et plusieurs objectifs : les attaques peuvent, par exemple, venir d'un virus introduit dans le SI ou bien être mené par ingénierie sociale (phishing) et avoir pour objectif le vol de données sensibles ou bien l'endommagement de services de l'organisation. 
@@ -15,41 +17,31 @@ Dans tous les cas, il résulte d'une attaque réussie une perte financière pour
 ## Les principaux acteurs du milieu
 
 
-L'image hollywoodienne du hacker travaillant seul dans son grenier n'est plus d'actualité. Du côté offensif se trouvent un certain nombre de groupes, plus ou moins étatiques, bien organisés et bien formés, qui sont à l'origine des attaques utilisant des vulnérabilités inconnues ou 0-day. Les attaques reposant sur le phishing ou les opérations d'ingénierie sociale sont le fruit de groupes moins structurés. [faut justifier ça]
+L'image hollywoodienne du hacker travaillant seul dans son grenier n'est plus d'actualité. Du côté offensif on trouve plusieurs modèles d'organisations : 
 
----> L'ère du hacker dans son grenier chez ses parents est terminé
+Il existe un certain nombre de groupes, bien organisés et bien formés, qui sont à l'origine des attaques utilisant des vulnérabilités inconnues. Ces groupes agissent parfois pour le compte, ou au moins en lien, avec des états et leurs objectifs consistent le plus souvent à du vol de données de grande ampleur : exemple de Sony Pictures, et [trouver d'autres exemples].
 
----> Les acteurs étatiques : 
+D'autres groupes ont une structuration plus mafieuse et se spécialisent dans le vol de données personnelles, ou la fraude à des fins d'enrichissement personnels.
 
-------> Quelques organismes comme l'ANSSI
+Enfin, d'autres organismes sont spécialisés dans les campagnes de phishing... [faut étoffer ça].
 
-------> Les services de renseignement
 
----> Les acteurs privés :
+Les attaques reposant sur le phishing ou les opérations d'ingénierie sociale sont le fruit de groupes moins structurés. [faut justifier ça]
 
-------> Beaucoup d'entreprises actives dans le domaine de la cyber-sécurité / défense
+DU côté de la cyber-sécurité, ou de la cyber-défense se trouvent un certain nombre d'organismes publics, comme, en France, l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Informations) chargée de formuler des recommandations à destination des entreprises, ou d'autres organismes et des particuliers et, d'une manière générale, de lutter contre la cyber-criminalité. Mais il existe aussi beaucoup d'acteurs privés : les éditeurs d'antivirus, ou d'autres types de logiciels comme les firewall, par exemple. On trouve aussi des entreprises spécialisés dans l'audit de systèmes d'informations ou dans le conseil en sécurité informatique. Enfin, tous les éditeurs de logiciels, quels qu'ils soient, participent à la sécurité de leurs utilisateurs en prenant en compte les aspects sécurité de leurs produits. Enfin, il existe d'autres initiatives moins classiques, comme celle-ci, récente : [insérier liens ici].
 
-------> Quelques fabricants de logiciels espions
-
----> Les acteurs illégaux
-
-------> Forte structuration à l'heure actuelle
+Il s'agit d'une entreprise spécialisée dans le Bug Bounty [expliquer le principe du bug bounty ici].
 
 ## Les grandes familles de vulnérabilités
 
 Une vulnérabilité, ou une faille, correspond à une utilisation non prévue d'un logiciel (ou d'un composant) et qui permet d'obtenir un effet non prévu, potentiellement intéressant pour quelqu'un de malveillant. Il en existe de plusieurs types, qui permettent chacune d'obtenir des choses différentes sur le système ciblé : prise de contrôle totale, accès aux données stockées et manipulées, utilisation comme relai pour communiquer avec d'autres systèmes.
-
-
-
-
----> Qu'est ce qu'une faille ? Une utilisation non prévue d'un logiciel qui permet de faire des choses potentiellement malveillantes...
 
 ---> Voir les slides et en rajouter quelques unes.
 
 
 ## Vers une prise de conscience globale du problème ?
 
----> Un constat : la plupart des problèmes ont pour origine un problème se trouvant entre la chaise et le clavier. Avec de bonnes pratiques, on peut éviter 99% des attaques, mais ça ne semble pas encore bien connu... Cf Trustico, dernier en date.
+---> Un constat : la plupart des problèmes ont pour origine un problème se trouvant entre la chaise et le clavier. Avec de bonnes pratiques, on peut éviter 99% des attaques, mais ça ne semble pas encore bien connu... [Cf Trustico, dernier en date].
 
 
 
