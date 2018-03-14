@@ -6,13 +6,15 @@ Le domaine de la cyber-sécurité est un champ très actif en informatique, avec
 
 # Panorama cyber-sécurité et cyber-menaces actuel  
 
-Les cyber-attaques constituent le quotidien des entreprises ou des organisations, à partir du moment où leur système d'informations atteint une certaine importance. Ces attaques peuvent avoir plusieurs origines et plusieurs objectifs : les attaques peuvent, par exemple, venir d'un virus introduit dans le SI ou bien être mené par ingénierie sociale (phishing) et avoir pour objectif le vol de données sensibles ou bien l'endommagement de services de l'organisation. 
+Les cyber-attaques constituent le quotidien de toutes les organisations, à partir du moment où leur système d'informations atteint une certaine importance. Ces attaques peuvent avoir plusieurs origines et plusieurs objectifs : les attaques peuvent, par exemple, venir d'un virus introduit dans le SI ou bien être mené par ingénierie sociale (phishing) et avoir pour objectif le vol de données sensibles ou bien l'endommagement de services de l'organisation. 
 
 ## Les cyber-attaques : une importante source de pertes financières
 
-Dans tous les cas, il résulte d'une attaque réussie une perte financière pour l'entreprise ou l'organisme ciblé : des sanctions légales peuvent être prises si l'attaque résulte d'une infraction aux réglementations, l'entreprise souffre aussi au niveau de son image de marque et une attaque peut décourager les investisseurs ou avoir un impact négatif sur la cotation en bourse de l'entreprise. Enfin, les attaques ont souvent des impacts financiers direct : leaking de films avant leur sortie officielle dans le cas de Sony Pictures (coût estimé à 101.6 millions de dollars, dont 15 pour la réparation des dégats), paralysie totale de l'organisation dans le cas de la NHS britannique à cause du ransomware WannaCry...[faut justifier ça]
+Dans tous les cas, il résulte d'une attaque réussie une perte financière pour l'entreprise ou l'organisme ciblé : des sanctions légales peuvent être prises si l'attaque résulte d'une infraction aux réglementations, l'entreprise souffre aussi au niveau de son image de marque et une attaque peut décourager les investisseurs ou avoir un impact négatif sur la cotation en bourse de l'entreprise. Enfin, les attaques ont souvent des impacts financiers direct : mise en ligne de 5 films avant leur sortie officielle dans le cas de Sony Pictures (coût total de l'attaque estimé à 101.6 millions de dollars, dont 45 pour la réparation des dégats [source](https://pedagogie.ec-lyon.fr/claroline/backends/download.php?url=LzIwMTctMjAxOC9Db3Vyc19T6WN1cml06V9kdV9TSV92Mi5wZGY%3D&cidReset=true&cidReq=S9_17160), vague d'attaques dirigées contre des établissements bancaires : 80 millions de dollars détournés [source](http://www.lemonde.fr/technologies/article/2012/06/26/80-millions-de-dollars-detournes-dans-une-cyberattaque-visant-des-banques_1724984_651865.html)...
 
----> Des statistiques
+En matière de cyber-criminalité, la tendance est globalement à la hausse : 
+
+
 
 ## Les principaux acteurs du milieu
 
@@ -46,6 +48,112 @@ Une vulnérabilité, ou une faille, correspond à une utilisation non prévue d'
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Une petite minorité de vulnérabilités : les failles matérielles
 
 ## Des failles particulières
@@ -61,7 +169,7 @@ Une vulnérabilité, ou une faille, correspond à une utilisation non prévue d'
 
 ---> avec le développement de l'IoT et la prise en compte de la sécurité de manière assez légère on va dire. L'augmentation de composants spécifiques, lâchés sur le marché le plus rapidement possible va dans ce sens.
 
----> Parler de l'actualité des failles hardware si je trouve quelque chose à dire
+---> Parler de l'actualité des failles hardware si je trouve quelque chose à dir
 
 
 # Meltdown & Spectre
