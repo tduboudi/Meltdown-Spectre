@@ -29,128 +29,42 @@ On constate bien une augmentation généralisée du phénomène, en terme de co�
 ## Les principaux acteurs du milieu
 
 
-L'image hollywoodienne du hacker travaillant seul dans son grenier n'est plus d'actualité. Du côté offensif on trouve plusieurs modèles d'organisations : 
+Du côté offensif (cyber-crimes, espionnage économique, vandalisme, déstabilisation, etc.) on trouve plusieurs modèles d'organisations : 
 
-Il existe un certain nombre de groupes, bien organisés et bien formés, qui sont à l'origine des attaques utilisant des vulnérabilités inconnues. Ces groupes agissent parfois pour le compte, ou au moins en lien, avec des états et leurs objectifs consistent le plus souvent à du vol de données de grande ampleur : exemple de Sony Pictures, et [trouver d'autres exemples].
+Il existe un certain nombre de groupes, nombreux, bien organisés et bien formés, qui sont essentiellement à l'origine des attaques de grandes ampleurs. Ces groupes agissent parfois pour le compte, ou au moins en lien, avec des états et leurs objectifs consistent le plus souvent à du vol de données sensibles de grande ampleur : c'est le cas de l'attaque contre Sony Pictures, pendant laquelle les assaillants se sont introduits dans le SI de l'entreprise via des failles inconnues et ont  dérobé plusieurs teraoctets de données. Les enquêtes américaines menées après l'attaque ont pointé la responsabilité de la Corée du Nord dans l'opération. Des groupes de ce type sont la plupart du temps à l'origine des attaques les plus sophistiquées, comme en témoigne l'ANSSI ([source](https://www.ssi.gouv.fr/entreprise/principales-menaces/espionnage/)) :
 
-D'autres groupes ont une structuration plus mafieuse et se spécialisent dans le vol de données personnelles, ou la fraude à des fins d'enrichissement personnels.
+"Le Centre de cyberdéfense constate que ce type d’attaques est le plus souvent le fait de groupes structurés. Ces attaques très ciblées exploitent des codes conçus pour traverser les dispositifs de sécurité techniques de leur cible. Le développement de certains codes malveillants employés requiert parfois de très importants moyens mobilisant des centaines d’ingénieurs. S’agit-il d’États ou de concurrents ? Certaines cyber-attaques utilisent parfois une tactique militaire bien rodée, déployant l’éclaireur, le perceur (intrusion dans le système d’information), celui qui va déposer, celui qui va rechercher, celui qui va collecter et exfiltrer les informations. Dans certaines opérations, le niveau de sophistication technique et la division méthodique du travail mise en place laissent penser que seuls des États ou des organisations dotées d’importants moyens humains et matériels peuvent conduire de telles attaques."
 
-Enfin, d'autres organismes sont spécialisés dans les campagnes de phishing... [faut étoffer ça].
+D'autres groupes ont une structuration plus mafieuse et se spécialisent dans le vol de données personnelles, la fraude à des fins d'enrichissement personnel, le phishing ou encore les attaques par ransomware (rançongiciels). C'est le cas de l'organisation, situé en Europe de l'Est et en Russie, à l'origine du malware Zeus, qui permettait, au choix, d'obtenir les identifiants bancaires des victimes ou de crypter des données personnels et de les échanger contre rançons. Son fonctionnement était digne de celui d'une entreprise, avec différentes fonctions au sein de l'organisation : comptable, blanchisseur d'argent, etc. ([source](https://www.wired.com/2017/03/russian-hacker-spy-botnet/)). 
 
+Enfin, on trouve quelques attaques menées par des "hacktivistes" : il s'agit le plus souvent d'attaques visant à destabiliser un organisme dont les attaquants ne partagent pas les convictions : défacement de page web, attaque par déni de service. Par exemple, le collectif Anonymous s'est impliqué dans le conflit israélo-palestinien en attaquant des sites de l'administration israëlienne ([source](https://www.lemonde.fr/proche-orient/article/2012/11/16/anonymous-s-invite-dans-le-conflit-israelo-palestinien_1792141_3218.html)).
 
-Les attaques reposant sur le phishing ou les opérations d'ingénierie sociale sont le fruit de groupes moins structurés. [faut justifier ça]
+Du côté défensif se trouvent un certain nombre d'organismes publics, comme, en France, l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Informations) chargée de formuler des recommandations à destination des entreprises, ou d'autres organismes et des particuliers et, d'une manière générale, de lutter contre la cyber-criminalité. Mais il existe aussi beaucoup d'acteurs privés : les éditeurs d'antivirus, ou d'autres types de logiciels comme les firewall, par exemple. On trouve aussi des entreprises spécialisés dans l'audit de systèmes d'informations, dans le conseil en sécurité informatique ou même dans la recherche de vulnerabilités, comme Google Project Zero.
 
-DU côté de la cyber-sécurité, ou de la cyber-défense se trouvent un certain nombre d'organismes publics, comme, en France, l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Informations) chargée de formuler des recommandations à destination des entreprises, ou d'autres organismes et des particuliers et, d'une manière générale, de lutter contre la cyber-criminalité. Mais il existe aussi beaucoup d'acteurs privés : les éditeurs d'antivirus, ou d'autres types de logiciels comme les firewall, par exemple. On trouve aussi des entreprises spécialisés dans l'audit de systèmes d'informations ou dans le conseil en sécurité informatique. Enfin, tous les éditeurs de logiciels, quels qu'ils soient, participent à la sécurité de leurs utilisateurs en prenant en compte les aspects sécurité de leurs produits. Enfin, il existe d'autres initiatives moins classiques, comme celle-ci, récente : [insérier liens ici].
-
-Il s'agit d'une entreprise spécialisée dans le Bug Bounty [expliquer le principe du bug bounty ici].
+Enfin, tous les éditeurs de logiciels, quels qu'ils soient, participent à la sécurité de leurs utilisateurs en prenant en compte les aspects sécurité de leurs produits. Il existe d'autres initiatives moins classiques, comme celle-ci, récente : [Yes We Hack](https://yeswehack.com/fr/index.html). Il s'agit d'une entreprise spécialisée dans le Bug Bounty : une entreprise éditant un logiciel peut décider d'offrir une prime au découvreur d'une faille de sécurité, dépendant de l'importance de celle-ci. Yes We Hack est une entreprise mettant en relations les entreprises offrant les bug bounty et les experts en sécurité susceptible d'y répondre.
 
 ## Les grandes familles de vulnérabilités
 
 Une vulnérabilité, ou une faille, correspond à une utilisation non prévue d'un logiciel (ou d'un composant) et qui permet d'obtenir un effet non prévu, potentiellement intéressant pour quelqu'un de malveillant. Il en existe de plusieurs types, qui permettent chacune d'obtenir des choses différentes sur le système ciblé : prise de contrôle totale, accès aux données stockées et manipulées, utilisation comme relai pour communiquer avec d'autres systèmes.
 
----> Voir les slides et en rajouter quelques unes.
+On distingue par exemple les élévations de privilèges, qui consistent à réussir à obtenir des droits sur un système plus élevés que ceux dont on disposait initialement. Cela permet de le modifier en profondeur ou de lui faire faire des choses qui nécessitent habituellement des droits d'administration. Sous Linux, dirty C0w est une faille permettant ainsi d'obtenir les droits root sur un système non protégé.
+
+![Image2](https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgflip.com%2F1zo1th.jpg&f=1)
+
+Un autre type assez classique d'attaque sont les attaques par canaux auxiliaires. Il ne s'agit pas à proprement parler d'exploiter un logiciel d'une manière particulière mais plus d'étudier attentivement son fonctionnement pour en déduire des informations intéressantes. Par exemple, l'image ci-dessous représente la consommation électrique d'un CPU au moment de l'utilisation d'un algorithme de cryptage et permet, connaissant bien l'algorithme utilisé, de retrouver les données manipulées, y compris des clés de chiffrement...
+
+![Image3](https://upload.wikimedia.org/wikipedia/commons/6/6c/Power_attack.png)
+
+Ensuite, une des vulnérabilités les plus classiques est l'erreur de validation d'inputs, qui permet, dans le meilleur des cas, de faire exécuter du code par la machine cible. Les formes les plus connues de ce genre de vulnerabilités sont les injections SQL, ou le cross-site scripting (injections XSS) mais d'autres logiciels ou services y sont vulnérables.
+
+![Image4](https://imgs.xkcd.com/comics/exploits_of_a_mom.png)
 
 
 ## Vers une prise de conscience globale du problème ?
 
----> Un constat : la plupart des problèmes ont pour origine un problème se trouvant entre la chaise et le clavier. Avec de bonnes pratiques, on peut éviter 99% des attaques, mais ça ne semble pas encore bien connu... [Cf Trustico, dernier en date].
+Sur la situation cybersécuritaire actuelle, un constat se fait : la plupart des attaques ont pour origine un problème se trouvant entre la chaise et le clavier. Avec de bonnes pratiques, on peut éviter l'immense majorité des attaques, mais certains reflexes de base ne sont pas encore assez répandu, en témoigne l'accès libre laissé à une base de données de 700 000 lecteurs de "L'Express" ([source](http://www.lemonde.fr/pixels/article/2018/03/01/des-donnees-de-pres-de-700-000-lecteurs-du-site-de-l-express-accessibles-en-ligne_5264341_4408996.html?utm_term=Autofeed&utm_campaign=Echobox&utm_medium=Social&utm_source=Twitter#link_time=1519947848)). 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Cependant, un certain nombre d'initiatives se montent pour faire entrer ces bonnes pratiques dans les pratiques classiques de sécurité, comme celle-ci : https://www.letemps.ch/opinions/une-cyberhygiene-entreprises-genevoises?utm_content=68319697&utm_medium=social&utm_source=twitter.
 
 
 
@@ -168,11 +82,25 @@ Une vulnérabilité, ou une faille, correspond à une utilisation non prévue d'
 
 ## Des failles particulières
 
----> dont l'origine n'est pas un logiciel mais un composant informatique
+Les failles que nous avons mentionné plus haut ont la plupart du temps une origine logicielle, c'est à dire qu'il faut, pour les exploiter, utiliser un logiciel d'une manière particulière. Il arrive aussi que l'exploitation se fasse directement à partir d'un composant du système : CPU, RAM, etc. Elles constituent à l'heure actuelle une minorité de toutes les vulnérabilités existantes, même s'il est difficile de quantifier exactement à quel point car l'organisme en charge de répertorier toutes ces failles (sous la mention CVE, pour Common Vulnerabilities and Exposure) ne permet pas de recherche évidente sur ce critère. La NVD (pour National Vulnerabilities Database), plus complète et détaillée, ne permet pas non plus d'extraire ces informations.
 
-## Difficile à trouver, difficile à exploiter et difficile à corriger
+## Difficiles à trouver, difficiles à exploiter et difficiles à corriger
 
----> Elles nécessitent de comprendre le fonctionnement des composants à un niveau très profond. Il faut des équipes et des compétences spécifiques que l'on ne trouve pas partout.
+Ces failles, cependant, sont particulièrement complexes à trouver, car elles nécessitent souvent une très bonne connaissance du fonctionnement bas niveau des ordinateurs.  De même, elles sont souvent assez complexes à exploiter (ça n'est pas le cas de Meltdown par exemple). Enfin, elles sont difficiles à corriger, car il faut trouver un correctif logiciel, le plus souvent pour le système d'exploitation, pour un problème matériel. 
+
+À titre d'exemples, quelques-unes des vulnerabilités matérielles les plus connues : 
+
+- Rowhammer (2015) : Les ordinateurs modernes disposent de mécanismes d'isolations de processus : deux programmes différents, en train d'être exécutés, ne peuvent accéder ni en lecture, ni en écriture, aux données manipulées par l'autre. En particulier, un programme ne peut pas accéder aux adresses mémoires réservées au noyau du système d'exploitation. Ce principe d'exclusion permet plus de sureté au niveau de l'exécution des programmes : un programme ne risque pas de modifier les données d'un autre programme accidentellement, mais cela permet aussi d'empêcher "l'espionnage" d'un processus par un autre. Il existe un certain nombre de moyen de briser cette isolation et Rowhammer en est un exemple. Cette faille repose sur le fait que l'accès à une cellule de RAM perturbe électriquement les cellules voisines (avec la diminuation de taille des cellules, il est devenu difficile de les empêcher d'interagir). Avec suffisamment d'accès sur une même cellule, on peut faire changer la valeur du bit stocké dans une cellule voisine. Cette interaction permet de construire une élévation de privilège.
+
+- HSM / TPM Vulnerabilities : un HSM (Hardware Security Module) est un dispositif physique de stockage et de calcul, situé dans certains ordinateurs et indépendants du disque dur, et du CPU, qui permet de gérer et de stocker des clés cryptographique privée. Il existe un certain nombre de vulnérabilité affectant directement ces composants, comme la faille CVE-2015-5464.
+
+- Cold Boot Attack : contrairement à ce qui est régulièrement indiqué, les informations stockées en mémoire RAM ne sont pas effacées à l'arrêt d'un ordinateur. Dans certaines circonstances, elles peuvent persister pendant un certain temps, de quelques secondes à quelques minutes, après l'arrêt du système, et il existe donc des méthodes pour récupérer ces données, sans limitation de droits d'accès. Cette vulnérabilité nécessite un accès physique au système cible et ne constitue donc pas une menace de grande ampleur. Elle est liée au fonctionnement physique de la mémoire RAM : il y a une rémanence des données inhérentes aux mémoires électroniques.
+
+- Meltdown & Spectre : nous en parlerons plus bas.
+
+
+
+
 
 
 ## Mais qui pourraient devenir plus fréquentes ...
@@ -180,6 +108,27 @@ Une vulnérabilité, ou une faille, correspond à une utilisation non prévue d'
 ---> avec le développement de l'IoT et la prise en compte de la sécurité de manière assez légère on va dire. L'augmentation de composants spécifiques, lâchés sur le marché le plus rapidement possible va dans ce sens.
 
 ---> Parler de l'actualité des failles hardware si je trouve quelque chose à dir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Meltdown & Spectre
