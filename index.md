@@ -99,26 +99,9 @@ Ces failles, cependant, sont particulièrement complexes à trouver, car elles n
 - Meltdown & Spectre : nous en parlerons plus bas.
 
 
-
-
-
-
 ## Mais qui pourraient devenir plus fréquentes ...
 
----> avec le développement de l'IoT et la prise en compte de la sécurité de manière assez légère on va dire. L'augmentation de composants spécifiques, lâchés sur le marché le plus rapidement possible va dans ce sens.
-
----> Parler de l'actualité des failles hardware si je trouve quelque chose à dir
-
-
-
-
-
-
-
-
-
-
-
+Avec le développement de l'IoT et l'augmentation de la complexité des composants électroniques, relâchés sur le marché dans un contexte de concurrence forte, les étapes de validation de sécurité sont souvent négligées : [70% des objets connectés sont vulnérables aux attaques](http://www8.hp.com/us/en/hp-news/press-release.html?id=1744676). On peut donc craindre une augmentation généralisée des vulnérabilités.
 
 
 
@@ -133,9 +116,18 @@ Ces failles, cependant, sont particulièrement complexes à trouver, car elles n
 
 # Meltdown & Spectre
 
+Meltdown et Spectre sont 2 vulnérabilités matérielles rendues publiques début 2018 et qui fait du bruit dans le milieu de la cyber-sécurité parce qu'elles affectent la quasi-totalité des processeurs. L'objectif de cette partie est de présenter le fonctionnement de ces 2 failles d'un point de vue de vulgarisateur, nous n'irons pas le plus profondément possible dans les détails. Tous les détails techniques concernant ces deux attaques sont disponibles [ici](https://meltdownattack.com/).
+
 ## Quelques connaissances utiles
 
----> Exécution spéculative
+Pour comprendre le fonctionnement de Meltdown et de Spectre, il est nécessaire de revenir sur quelques mécanismes bas-niveau des ordinateurs.
+
+
+#### Exécution spéculative
+
+Contrairement à ce que l'on pourrait penser, un processeur n'exécute pas les instructions se trouvant dans un programme dans l'ordre où elles sont définies. En effet, cette stratégie, qui s'appelle l'exécution spéculative, permet un gain de temps lors de l'exécution qui n'est pas toujours négligeable. C'est un des nombreux mécanismes d'optimisation qui existent sur les processeurs modernes.
+
+L'utilisation typique d'une telle fonctionnalité 
 
 ---> Mémoire caches
 
