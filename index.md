@@ -144,7 +144,11 @@ Un programme va donc stocker en cache un certain nombre de données pendant son 
 
 Enfin, le dernier mécanisme essentiel à la compréhension de nos failles est le mécanisme d'isolation des processus. Nous l'avons abordé dans le paragraphe sur la faille Rowhammer mais nous allons revenir plus en détail sur la manière dont cette isolation est implémenté. 
 
+L'isolation de processus repose principalement sur un mécanisme appelé **Mémoire virtuelle**. Ce mécanisme effectue une "traduction" à la volée des adresses mémoires vues et manipulées par un programme vers des adresses mémoires de la mémoire physique. On parle donc de mémoire virtuelle puisque les adresses vues par un programme ne correspondent à des adresses mémoires réelles.
 
+![image_n](https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Memoire_virtuelle.svg/330px-Memoire_virtuelle.svg.png)
+
+La manière dont cette "traduction" est réalisée (des segments de mémoire réelle disjoints sont alloués aux différents programmes, même si du côté mémoire virtuelle, ils utilisent les mêmes adresses) permet d'obtenir l'isolation des processus. 
 
 
 ## Meltdown
