@@ -137,6 +137,8 @@ Le stockage des données manipulées par un programme dans un disque dur est une
 
 En pratique, l'accès à une mémoire RAM est aussi trop lente. C'est pour cette raison que les processeurs modernes internes intègrent directement dans leur architecture des mémoires caches (de type L1, L2 ou L3) qui sont des mémoires beaucoup plus coûteuses mais beaucoup plus rapides. Les mémoires de type L1 sont les plus rapides, mais aussi les plus chères donc celles qui stockent le moins d'informations, puis viennent les mémoires caches L2 et L3...
 
+![imagebb](https://cdn-images-1.medium.com/max/800/1*Su7d0UCcqBSgeYHdpmGRdg.png)
+
 Un programme va donc stocker en cache un certain nombre de données pendant son exécution et notamment les données qu'il manipule le plus souvent. Là encore, la gestion du cache se fait essentiellement à un niveau inférieur à celui du système d'exploitation, mais l'utilisateur a partiellement la main sur le chargement de certaines variables en cache. 
 
 
@@ -161,7 +163,7 @@ La manière dont cette "traduction" est réalisée (des segments de mémoire ré
 
 ## Correction
 
----> Rapidement
+On l'a vu, Meltdown et Spectre sont des failles qui peuvent être utilisés pour "espionner" des données se trouvant en mémoire vive. Il est cependant nécessaire de réussir à exécuter le code d'attaque sur la machine cible. Hors il est assez compliqué d'obtenir d'une machine sur laquelle nous n'avons pas de droits qu'elle exécute le code de notre choix. À deux exceptions près : **le javascript** présent sur une page web et qui est exécuté par le navigateur de la machine consultant la page, et **les machines virtuelles** qui permettent d'exécuter sur le même matériel que la machine virtuelle cible un code de notre choix. 
 
 
 ## Cas d'utilisation
