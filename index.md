@@ -127,11 +127,24 @@ Pour comprendre le fonctionnement de Meltdown et de Spectre, il est nécessaire 
 
 Contrairement à ce que l'on pourrait penser, un processeur n'exécute pas les instructions se trouvant dans un programme dans l'ordre où elles sont définies. En effet, cette stratégie, qui s'appelle l'exécution spéculative, permet un gain de temps lors de l'exécution qui n'est pas toujours négligeable. C'est un des nombreux mécanismes d'optimisation qui existent sur les processeurs modernes.
 
-L'utilisation typique d'une telle fonctionnalité 
+Une telle fonctionnalité permet typiquement de continuer l'exécution d'un programme alors qu'il est nécessaire d'aller lire en RAM une valeur. Plutôt que de s'arrêter sur une condition, par exemple, si une lecture en RAM est nécessaire, et d'attendre la réponse de la lecture en RAM, le programme va continuer son exécution. Dès que la réponse est disponible, la condition va être vérifée : si elle est vraie, alors le programme aura bien fait de prendre de l'avance puisque le résultat sera déjà disponible et sinon, il va jeter le résultat et recommencer un calcul correct. 
 
----> Mémoire caches
+Elle est gérée directement au niveau firmware et hardware, par des méthodes propriétaires.
 
----> Isolation des processus
+#### Mémoire caches
+
+Le stockage des données manipulées par un programme dans un disque dur est une solution qui propose de terribles performances : les temps de lecture et d'écriture sur disque sont trop importants pour avoir quelque chose de suffisamment fonctionnel (voir les performances obtenues avec la swap par exemple). Un programme utilise donc la RAM  (le plus souvent) pour stocker momentanément ses données. 
+
+En pratique, l'accès à une mémoire RAM est aussi trop lente. C'est pour cette raison que les processeurs modernes internes intègrent directement dans leur architecture des mémoires caches (de type L1, L2 ou L3) qui sont des mémoires beaucoup plus coûteuses mais beaucoup plus rapides. Les mémoires de type L1 sont les plus rapides, mais aussi les plus chères donc celles qui stockent le moins d'informations, puis viennent les mémoires caches L2 et L3...
+
+Un programme va donc stocker en cache un certain nombre de données pendant son exécution et notamment les données qu'il manipule le plus souvent. Là encore, la gestion du cache se fait essentiellement à un niveau inférieur à celui du système d'exploitation, mais l'utilisateur a partiellement la main sur le chargement de certaines variables en cache. 
+
+
+#### Isolation des processus
+
+Enfin, le dernier mécanisme essentiel à la compréhension de nos failles est le mécanisme d'isolation des processus. Nous l'avons abordé dans le paragraphe sur la faille Rowhammer mais nous allons revenir plus en détail sur la manière dont cette isolation est implémenté. 
+
+
 
 
 ## Meltdown
