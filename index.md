@@ -28,7 +28,7 @@ On constate bien une augmentation généralisée du phénomène, en terme de co�
 
 ## Les principaux acteurs du milieu
 
-
+```
 Du côté offensif (cyber-crimes, espionnage économique, vandalisme, déstabilisation, etc.) on trouve plusieurs modèles d'organisations : 
 
 Il existe un certain nombre de groupes, nombreux, bien organisés et bien formés, qui sont essentiellement à l'origine des attaques de grandes ampleurs. Ces groupes agissent parfois pour le compte, ou au moins en lien, avec des états et leurs objectifs consistent le plus souvent à du vol de données sensibles de grande ampleur : c'est le cas de l'attaque contre Sony Pictures, pendant laquelle les assaillants se sont introduits dans le SI de l'entreprise via des failles inconnues et ont  dérobé plusieurs teraoctets de données. Les enquêtes américaines menées après l'attaque ont pointé la responsabilité de la Corée du Nord dans l'opération. Des groupes de ce type sont la plupart du temps à l'origine des attaques les plus sophistiquées, comme en témoigne l'ANSSI ([source](https://www.ssi.gouv.fr/entreprise/principales-menaces/espionnage/)) :
@@ -42,9 +42,11 @@ Enfin, on trouve quelques attaques menées par des "hacktivistes" : il s'agit le
 Du côté défensif se trouvent un certain nombre d'organismes publics, comme, en France, l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Informations) chargée de formuler des recommandations à destination des entreprises, ou d'autres organismes et des particuliers et, d'une manière générale, de lutter contre la cyber-criminalité. Mais il existe aussi beaucoup d'acteurs privés : les éditeurs d'antivirus, ou d'autres types de logiciels comme les firewall, par exemple. On trouve aussi des entreprises spécialisées dans l'audit de systèmes d'informations, dans le conseil en sécurité informatique ou même dans la recherche de vulnerabilités, comme Google Project Zero.
 
 Enfin, tous les éditeurs de logiciels, quels qu'ils soient, participent à la sécurité de leurs utilisateurs en prenant en compte les aspects sécurité de leurs produits. Il existe d'autres initiatives moins classiques, comme celle-ci, récente : [Yes We Hack](https://yeswehack.com/fr/index.html). Il s'agit d'une entreprise spécialisée dans le Bug Bounty : une entreprise éditant un logiciel peut décider d'offrir une prime au découvreur d'une faille de sécurité, dépendant de l'importance de celle-ci. Yes We Hack est une entreprise mettant en relations les entreprises offrant les bug bounty et les experts en sécurité susceptibles d'y répondre.
+```
 
 ## Les grandes familles de vulnérabilités
 
+```
 Une vulnérabilité, ou une faille, correspond à une utilisation non prévue d'un logiciel (ou d'un composant) et qui permet d'obtenir un effet non prévu, potentiellement intéressant pour quelqu'un de malveillant. Il en existe de plusieurs types, qui permettent chacune d'obtenir des choses différentes sur le système ciblé : prise de contrôle totale, accès aux données stockées et manipulées, utilisation comme relai pour communiquer avec d'autres systèmes, etc.
 
 On distingue par exemple les élévations de privilèges, qui consistent à réussir à obtenir des droits sur un système plus élevés que ceux dont on disposait initialement. Cela permet de le modifier en profondeur ou de lui faire faire des choses qui nécessitent habituellement des droits d'administration. Sous Linux, dirty C0w est une faille permettant ainsi d'obtenir les droits root sur un système non protégé.
@@ -62,6 +64,7 @@ Ensuite, une des vulnérabilités les plus classiques est l'erreur de validation
 ![Image4](https://imgs.xkcd.com/comics/exploits_of_a_mom.png)
 
 ([source : xkcd](https://www.xkcd.com/))
+```
 
 ## Vers une prise de conscience globale du problème ?
 
@@ -91,6 +94,7 @@ Les failles que nous avons mentionné plus haut ont la plupart du temps une orig
 
 Ces failles, cependant, sont particulièrement complexes à trouver, car elles nécessitent souvent une très bonne connaissance du fonctionnement bas niveau des ordinateurs.  De même, elles sont souvent assez complexes à exploiter (ça n'est pas le cas de Meltdown par exemple). Enfin, elles sont difficiles à corriger, car il faut trouver un correctif logiciel, le plus souvent pour le système d'exploitation, pour un problème matériel. 
 
+```
 À titre d'exemples, quelques-unes des vulnerabilités matérielles les plus connues : 
 
 - [Rowhammer](https://googleprojectzero.blogspot.fr/2015/03/exploiting-dram-rowhammer-bug-to-gain.html) (2015) : Les ordinateurs modernes disposent de mécanismes d'isolations de processus : deux programmes différents, en train d'être exécutés, ne peuvent accéder ni en lecture, ni en écriture, aux données manipulées par l'autre. En particulier, un programme ne peut pas accéder aux adresses mémoires réservées au noyau du système d'exploitation. Ce principe d'exclusion permet plus de sureté au niveau de l'exécution des programmes : un programme ne risque pas de modifier les données d'un autre programme accidentellement, mais cela permet aussi d'empêcher "l'espionnage" d'un processus par un autre. Il existe un certain nombre de moyen de briser cette isolation et Rowhammer en est un exemple. Cette faille repose sur le fait que l'accès à une cellule de RAM perturbe électriquement les cellules voisines (avec la diminuation de taille des cellules, il est devenu difficile de les empêcher d'interagir). Avec suffisamment d'accès sur une même cellule, on peut faire changer la valeur du bit stocké dans une cellule voisine. Cette interaction permet de construire une élévation de privilège.
@@ -100,7 +104,7 @@ Ces failles, cependant, sont particulièrement complexes à trouver, car elles n
 - [Cold Boot Attack](https://en.wikipedia.org/wiki/Cold_boot_attack) : contrairement à ce qui est régulièrement indiqué, les informations stockées en mémoire RAM ne sont pas effacées à l'arrêt d'un ordinateur. Dans certaines circonstances, elles peuvent persister pendant un certain temps, de quelques secondes à quelques minutes, après l'arrêt du système, et il existe donc des méthodes pour récupérer ces données, sans limitation de droits d'accès. Cette vulnérabilité nécessite un accès physique au système cible et ne constitue donc pas une menace de grande ampleur. Elle est liée au fonctionnement physique de la mémoire RAM : il y a une rémanence des données inhérentes aux mémoires électroniques.
 
 - Meltdown & Spectre : nous en parlerons plus bas.
-
+```
 
 ## Mais qui pourraient devenir plus fréquentes ...
 
@@ -176,6 +180,7 @@ Il s'agit d'une vulnérabilité qui permet de briser l'isolation des processus p
 
 Elle a été découverte relativement indépendamment par des chercheurs du Google Project Zero (Jann Horn notamment) et des chercheurs de Cyberus Technology (Werner Haas, Thomas Prescher) ainsi que des chercheurs de l'université technologique de Graz (Daniel Gruss, Moritz Lipp, Stefan Mangard, Michael Schwarz). Elle cible tous les ordinateurs disposant de processeurs Intel, et certaines puces ARM y sont aussi vulnérables. Les entreprises concernées (Intel, quelques fabricants de puces ARM, mais aussi éditeurs de systèmes d'exploitations et entreprises spécialisées en cyber-sécurité) sont prévenues le 28 juillet 2017, et la vulnérabilité est rendue publique le 3 janvier 2018 (initialement la divulgation était prévue le 9 janvier mais des fuites et des pressions sur Intel ont acceléré le processus). Le délai s'explique simplement par la nécessité de développer un correctif avant de révéler l'existence de la vulnérabilité, sous peine de la voir utilisée à des fins malveillantes.
 
+```
 Son mode de fonctionnement est le suivant : 
 
 1. On commence par créer un tableau de 256 cases (256 pour toutes les valeurs que peut prendre un octet), qui va servir de receptacle de l'attaque
@@ -189,15 +194,15 @@ Son mode de fonctionnement est le suivant :
 5. L'utilisation de l'adresse déclenche nécessairement la page fault, mais celle-ci est interceptée. Cependant, le résultat de l'exécution spéculative, c'est à dire l'adresse mémoire lue correspondant à la valeur de l'octet cible, est toujours situé en cache, il n'y a pas eu d'effacement du cache au moment de l'exception.
 
 6. Finalement, on va parcourir le tableau initial et mesurer le temps nécessaire à lecture des informations qui y sont stockées. L'index qui charge le plus rapidement sera celui qui était situé en cache et non en RAM, et comme nous avons bien fait attention à ne pas mettre d'adresses du tableau en cache, cela correspond nécessairement à la valeur de l'octet cible.
-
+```
 
 Nous avons donc pu obtenir la valeur d'un octet de mémoire appartenant à un autre programme : il y a un défaut dans la manière dont l'exécution spéculative est implémenté au niveau des composants.
 
 Meltdown permet de lire des données structurées et de reconstruire même des informations complexes commes des photos ou des mots de passe : 
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/RbHbFkh6eeE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/RbHbFkh6eeE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/L1N1P2zxaZE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/L1N1P2zxaZE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Correction
 
@@ -222,7 +227,7 @@ Contrairement à Meltdown dont les correctifs sont sortis pour toutes les plate-
 L'approche la plus réussie jusqu'à présent est la technique développée par Google appelée RetPoline (pour ReturnTrampoline) qui permet de résoudre le problème sur la plupart des processeurs utilisants les instructions x86, et ce à un coût très faible en terme de pertes de performances.
 
 
-# Impact des ceux vulnérabilités
+# Impact des vulnérabilités
 
 Meltdown et Spectre, à l'inverse des vulnérabilités classiques qui sont vite oubliée, vont sans doute avoir un fort impact sur la manière dont la sécurité est pensée lors des étapes de conception de composants électroniques : avec Rowhammer, ce sont les failles qui affectent le plus de systèmes et pour lesquelles il n'existe pas toujours de correctifs... 
 
@@ -231,47 +236,4 @@ Pour aller plus loin :
 Les articles de l'équipe de chercheurs sur [Meltdown](https://meltdownattack.com/meltdown.pdf) et [Spectre](https://spectreattack.com/spectre.pdf).
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---------------------------------------------------------------------------------------------------------------------------
-
-
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
