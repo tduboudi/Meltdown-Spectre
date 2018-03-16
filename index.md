@@ -129,7 +129,7 @@ Contrairement à ce que l'on pourrait penser, un processeur n'exécute pas les i
 
 Une telle fonctionnalité permet typiquement de continuer l'exécution d'un programme alors qu'il est nécessaire d'aller lire en RAM une valeur. Plutôt que de s'arrêter sur une condition, par exemple, si une lecture en RAM est nécessaire, et d'attendre la réponse de la lecture en RAM, le programme va continuer son exécution. Dès que la réponse est disponible, la condition va être vérifée : si elle est vraie, alors le programme aura bien fait de prendre de l'avance puisque le résultat sera déjà disponible et sinon, il va jeter le résultat et recommencer un calcul correct. 
 
-![Image_xkcd_2](https://xkcd.com/1938/)
+![Image_xkcd_2](https://imgs.xkcd.com/comics/meltdown_and_spectre_2x.png)
 
 
 Elle est gérée directement au niveau firmware et hardware, par des méthodes propriétaires.
@@ -166,7 +166,7 @@ Meltdown et Spectre sont des failles qui peuvent être utilisés pour "espionner
 
 Nous pouvons donc maintenant rentrer dans le vif du sujet et aborder la première vulnérabilité : Meltdown.
 
-Il s'agit d'une vulnérabilité qui permet de briser l'isolation des processus par l'utilisation d'un canal auxiliaire (Side Channel Attack, en anglais). Elle permet donc de lire en mémoire vive des données appartennant à d'autres processus, voir même au noyau du système d'exploitation. En revanche, elle ne permet pas d'écrire quoi que ce soit, c'est purement un outil destiné à l'espionnage ou au vol de données sensibles, comme des mots de passe par exemple. 
+Il s'agit d'une vulnérabilité  qui permet de briser l'isolation des processus par l'utilisation d'un canal auxiliaire (Side Channel Attack, en anglais). Elle permet donc de lire en mémoire vive des données appartennant à d'autres processus, voir même au noyau du système d'exploitation. En revanche, elle ne permet pas d'écrire quoi que ce soit, c'est purement un outil destiné à l'espionnage ou au vol de données sensibles, comme des mots de passe par exemple. 
 
 Elle a été découverte relativement indépendamment par des chercheurs du Google Project Zero (Jann Horn notamment) et des chercheurs de Cyberus Technology (Werner Haas, Thomas Prescher) ainsi que des chercheurs de l'université technologique de Graz (Daniel Gruss, Moritz Lipp, Stefan Mangard, Michael Schwarz). Elle cible tous les ordinateurs disposant de processeurs Intel, et certaines puces ARM y sont aussi vulnérables. Les entreprises concernées (Intel, quelques fabricants de puces ARM, mais aussi éditeurs de systèmes d'exploitations et entreprises spécialisées en cyber-sécurité) sont prévenues le 28 juillet 2017, et la vulnérabilité est rendue publique le 3 janvier 2018 (initialement la divulgation était prévue le 9 janvier mais des fuites et des pressions sur Intel ont acceléré le processus). Le délai s'explique simplement par la nécessité de développer un correctif avant de révéler l'existence de la vulnérabilité, sous peine de la voir utilisée à des fins malveillantes.
 
@@ -203,7 +203,18 @@ Le correctif repose sur une technique appelée KPTI (Kernel Page Table Isolation
 
 Spectre, par rapport à Meltdown, est nettement plus complexe à utiliser mais aussi nettement plus complexe à corriger. Cette faille a été découverte par les mêmes équipes que celles à l'origine de Meltdown, et présenté aux fabricants de puces et aux éditeurs de systèmes d'exploitation quasiment en même temps que Meltdown, et révélée aux public en même temps. À la différence de Meltdown par contre, elle affecte la totalité des processeurs présents sur le marché (ou l'immense majorité) puisque Intel, AMD, les puces ARM et les processeurs d'IBM y sont vulnérables. 
 
-Son fonctionnement est le suivant :
+Son fonctionnement repose essentiellement sur un autre mécanisme d'optimisation, proche de l'exécution spéculative utilisée par Meltdown, qui s'appelle la prédiction de branchement : devant une condition, avec plusieurs issues, un processeur moderne va spéculer sur le résultat de cette condition (sa valeur et sa localisation en mémoire notamment) et effectuer les calculs correspondant à sa prédiction.
+
+Spectre est une méthode qui chercher à induire en erreur ce mécanisme de prédiction, par exemple en répetant un grand nombre de fois la même condition, avec le même résultat. Comme précédemment avec Meltdown, l'erreur de prédiction permet de lire une adresse mémoire normalement inaccessible et interdite. Et par diverses méthodes, similaires à celle de Meltdown, on peut récupérer la valeur de l'adresse interdite après que le processeur se soit rendu compte de son erreur.
+
+La différence principale avec Meltdwon réside dans le fait que Spectre n'est pas un bug : il faut "convaincre" et "tromper" le processeur pour le faire spéculer de manière incorrecte (par exemple avec la boucle mentionnée plus haut) et exploiter cette erreur, il n'y a pas de problèmes de conception dans la méthode de prédiction de branche, là où l'exécution spéculative de Meltdown ne devrait pas pouvoir avoir lieu pour des questions de droits d'accès. Les algorithmes de prédiction de branchement sont dépendants des constructeurs et c'est en partie pour cette raisons que la faille est plus complexe à mettre en oeuvre : il n'existe pas de méthode universelle pour tromper le mécanisme de prédiction.
+
+## Correction
+
+Contrairement à Meltdown dont les correctifs sont sortis pour toutes les plate-formes, la situation pour Spectre est nettement moins évidente. Spectre peut utiliser plusieurs vecteurs de lecture des données, qui peuvent être spécifique à la plate-forme, tous les processeurs n'y sont pas encore résistants.
+
+L'approche la plus réussie jusqu'à présent est la technique développée par Google appelée RetPoline (pour ReturnTrampoline) qui permet de résoudre le problème sur la plupart des processeurs utilisants les instructions x86, et ce à un coût très faible en terme de pertes de performances.
+
 
 
 
