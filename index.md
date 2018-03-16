@@ -129,6 +129,9 @@ Contrairement à ce que l'on pourrait penser, un processeur n'exécute pas les i
 
 Une telle fonctionnalité permet typiquement de continuer l'exécution d'un programme alors qu'il est nécessaire d'aller lire en RAM une valeur. Plutôt que de s'arrêter sur une condition, par exemple, si une lecture en RAM est nécessaire, et d'attendre la réponse de la lecture en RAM, le programme va continuer son exécution. Dès que la réponse est disponible, la condition va être vérifée : si elle est vraie, alors le programme aura bien fait de prendre de l'avance puisque le résultat sera déjà disponible et sinon, il va jeter le résultat et recommencer un calcul correct. 
 
+![Image_xkcd_2](https://xkcd.com/1938/)
+
+
 Elle est gérée directement au niveau firmware et hardware, par des méthodes propriétaires.
 
 #### Mémoire caches
@@ -159,13 +162,13 @@ Nous pouvons donc maintenant rentrer dans le vif du sujet et aborder la premièr
 
 Il s'agit d'une vulnérabilité qui permet de briser l'isolation des processus par l'utilisation d'un canal auxiliaire (Side Channel Attack, en anglais). Elle permet donc de lire en mémoire vive des données appartennant à d'autres processus, voir même au noyau du système d'exploitation. En revanche, elle ne permet pas d'écrire quoi que ce soit, c'est purement un outil destiné à l'espionnage ou au vol de données sensibles, comme des mots de passe par exemple. 
 
-Elle a été découverte relativement indépendamment par des chercheurs du Google Project Zero (Jann Horn notamment) et des chercheurs de Cyberus Technology (Werner Haas, Thomas Prescher) ainsi que des chercheurs indépendants et de différentes universités (Daniel Gruss, Moritz Lipp, Stefan Mangard, Michael Schwarz, et Paul Kocher). Elle cible tous les ordinateurs disposant de processeurs Intel, et certaines puces ARM y sont aussi vulnérables. Les entreprises concernées (Intel, quelques fabricants de puces ARM, mais aussi éditeurs de systèmes d'exploitations et entreprises spécialisées en cyber-sécurité) sont prévenues le 28 juillet 2017, et la vulnérabilité est rendue publique le 3 janvier 2018 (initialement la divulgation était prévue le 9 janvier mais des fuites et des pressions sur Intel ont acceléré le processus). Le délai s'explique simplement par la nécessité de développer un correctif avant de révéler l'existence de la vulnérabilité, sous peine de la voir utilisée à des fins malveillantes.
+Elle a été découverte relativement indépendamment par des chercheurs du Google Project Zero (Jann Horn notamment) et des chercheurs de Cyberus Technology (Werner Haas, Thomas Prescher) ainsi que des chercheurs de l'université technologique de Graz (Daniel Gruss, Moritz Lipp, Stefan Mangard, Michael Schwarz). Elle cible tous les ordinateurs disposant de processeurs Intel, et certaines puces ARM y sont aussi vulnérables. Les entreprises concernées (Intel, quelques fabricants de puces ARM, mais aussi éditeurs de systèmes d'exploitations et entreprises spécialisées en cyber-sécurité) sont prévenues le 28 juillet 2017, et la vulnérabilité est rendue publique le 3 janvier 2018 (initialement la divulgation était prévue le 9 janvier mais des fuites et des pressions sur Intel ont acceléré le processus). Le délai s'explique simplement par la nécessité de développer un correctif avant de révéler l'existence de la vulnérabilité, sous peine de la voir utilisée à des fins malveillantes.
 
 
 
 Son mode de fonctionnement est le suivant : 
 
-1. On commence par créer un tableau de 256 cases, qui va servir le receptacle de l'attaque
+1. On commence par créer un tableau de 256 cases (256 pour toutes les valeurs que peut prendre un octet), qui va servir le receptacle de l'attaque
 
 2. Par des méthodes que nous ne détaillerons pas, on peut empêcher le processeur de placer les adresses du tableau en mémoire cache. La plus simple consiste à utiliser des instructions bas niveau pour vider certaines adresses du cache.
 
@@ -180,7 +183,11 @@ Son mode de fonctionnement est le suivant :
 
 Il y a donc un défaut dans la manière dont l'exécution spéculative est implémenté au niveau des composants.
 
+Elle permet de lire en RAM des données structurées et de reconstruire même des informations complexes commes des photos : 
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/RbHbFkh6eeE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/L1N1P2zxaZE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 ## Spectre
@@ -189,12 +196,12 @@ Il y a donc un défaut dans la manière dont l'exécution spéculative est impl�
 
 ## Correction
 
-On l'a vu, Meltdown et Spectre sont des failles qui peuvent être utilisés pour "espionner" des données se trouvant en mémoire vive. Il est cependant nécessaire de réussir à exécuter le code d'attaque sur la machine cible. Hors il est assez compliqué d'obtenir d'une machine sur laquelle nous n'avons pas de droits qu'elle exécute le code de notre choix. À deux exceptions près : **le javascript** présent sur une page web et qui est exécuté par le navigateur de la machine consultant la page, et **les machines virtuelles** qui permettent d'exécuter sur le même matériel que la machine virtuelle cible un code de notre choix. 
-
 
 ## Cas d'utilisation
 
----> Expliquer le javascript et les VMs
+
+On l'a vu, Meltdown et Spectre sont des failles qui peuvent être utilisés pour "espionner" des données se trouvant en mémoire vive. Il est cependant nécessaire de réussir à exécuter le code d'attaque sur la machine cible. Hors il est assez compliqué d'obtenir d'une machine sur laquelle nous n'avons pas de droits qu'elle exécute le code de notre choix. À deux exceptions près : **le javascript** présent sur une page web et qui est exécuté par le navigateur de la machine consultant la page, et **les machines virtuelles** qui permettent d'exécuter sur le même matériel que la machine virtuelle cible un code de notre choix. 
+
 
 
 
