@@ -156,6 +156,12 @@ L'isolation de processus repose principalement sur un mécanisme appelé **Mémo
 La manière dont cette "traduction" est réalisée (des segments de mémoire réelle disjoints sont alloués aux différents programmes, même si du côté mémoire virtuelle, ils utilisent les mêmes adresses) permet d'obtenir l'isolation des processus. Elle est réalisée directement par des composants électroniquement et non pas par le système d'exploitation pour des raisons de performances.
 
 
+
+## Cas d'utilisation
+
+
+Meltdown et Spectre sont des failles qui peuvent être utilisés pour "espionner" des données se trouvant en mémoire vive. Il est cependant nécessaire de réussir à exécuter le code d'attaque sur la machine cible. Hors il est assez compliqué d'obtenir d'une machine sur laquelle nous n'avons pas de droits qu'elle exécute le code de notre choix. À deux exceptions près : **le javascript** présent sur une page web et qui est exécuté par le navigateur de la machine consultant la page, et **les machines virtuelles** qui permettent d'exécuter sur le même matériel que la machine virtuelle cible un code de notre choix. 
+
 ## Meltdown
 
 Nous pouvons donc maintenant rentrer dans le vif du sujet et aborder la première vulnérabilité : Meltdown.
@@ -163,8 +169,6 @@ Nous pouvons donc maintenant rentrer dans le vif du sujet et aborder la premièr
 Il s'agit d'une vulnérabilité qui permet de briser l'isolation des processus par l'utilisation d'un canal auxiliaire (Side Channel Attack, en anglais). Elle permet donc de lire en mémoire vive des données appartennant à d'autres processus, voir même au noyau du système d'exploitation. En revanche, elle ne permet pas d'écrire quoi que ce soit, c'est purement un outil destiné à l'espionnage ou au vol de données sensibles, comme des mots de passe par exemple. 
 
 Elle a été découverte relativement indépendamment par des chercheurs du Google Project Zero (Jann Horn notamment) et des chercheurs de Cyberus Technology (Werner Haas, Thomas Prescher) ainsi que des chercheurs de l'université technologique de Graz (Daniel Gruss, Moritz Lipp, Stefan Mangard, Michael Schwarz). Elle cible tous les ordinateurs disposant de processeurs Intel, et certaines puces ARM y sont aussi vulnérables. Les entreprises concernées (Intel, quelques fabricants de puces ARM, mais aussi éditeurs de systèmes d'exploitations et entreprises spécialisées en cyber-sécurité) sont prévenues le 28 juillet 2017, et la vulnérabilité est rendue publique le 3 janvier 2018 (initialement la divulgation était prévue le 9 janvier mais des fuites et des pressions sur Intel ont acceléré le processus). Le délai s'explique simplement par la nécessité de développer un correctif avant de révéler l'existence de la vulnérabilité, sous peine de la voir utilisée à des fins malveillantes.
-
-
 
 Son mode de fonctionnement est le suivant : 
 
@@ -183,24 +187,27 @@ Son mode de fonctionnement est le suivant :
 
 Il y a donc un défaut dans la manière dont l'exécution spéculative est implémenté au niveau des composants.
 
-Elle permet de lire en RAM des données structurées et de reconstruire même des informations complexes commes des photos : 
+Elle permet de lire en RAM des données structurées et de reconstruire même des informations complexes commes des photos ou des mots de passe : 
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/RbHbFkh6eeE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/L1N1P2zxaZE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+## Correction
+
+Meltdown est une vulnérabilité qui est à l'heure actuelle corrigée par la totalité des systèmes d'exploitation et des mécanismes supplémentaires ont été introduits dans les navigateurs garantissent la résistance à cette faille de la quasi-totalité des systèmes vis à vis des attaques venant du javascript.
+
+Le correctif repose sur une technique appelée KPTI (Kernel Page Table Isolation) et qui a pour conséquence de limiter l'exécution spéculative sur certains programmes, ce qui se traduit par des pertes de performances : initialement, les pertes étaient estimées allant de 5% à 30%, il semble que ce soit en général moins que ça [justifier ça]. 
 
 ## Spectre
 
----> Reprendre articles
+Spectre, par rapport à Meltdown, est nettement plus complexe à utiliser mais aussi nettement plus complexe à corriger. Cette faille a été découverte par les mêmes équipes que celles à l'origine de Meltdown, et présenté aux fabricants de puces et aux éditeurs de systèmes d'exploitation quasiment en même temps que Meltdown, et révélée aux public en même temps. À la différence de Meltdown par contre, elle affecte la totalité des processeurs présents sur le marché (ou l'immense majorité) puisque Intel, AMD, les puces ARM et les processeurs d'IBM y sont vulnérables. 
 
-## Correction
-
-
-## Cas d'utilisation
+Son fonctionnement est le suivant :
 
 
-On l'a vu, Meltdown et Spectre sont des failles qui peuvent être utilisés pour "espionner" des données se trouvant en mémoire vive. Il est cependant nécessaire de réussir à exécuter le code d'attaque sur la machine cible. Hors il est assez compliqué d'obtenir d'une machine sur laquelle nous n'avons pas de droits qu'elle exécute le code de notre choix. À deux exceptions près : **le javascript** présent sur une page web et qui est exécuté par le navigateur de la machine consultant la page, et **les machines virtuelles** qui permettent d'exécuter sur le même matériel que la machine virtuelle cible un code de notre choix. 
+
+
 
 
 
