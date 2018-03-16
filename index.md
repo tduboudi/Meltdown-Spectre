@@ -155,7 +155,13 @@ La manière dont cette "traduction" est réalisée (des segments de mémoire ré
 
 ## Meltdown
 
----> Reprendre slides et articles
+Nous pouvons donc maintenant rentrer dans le vif du sujet et aborder la première vulnérabilité : Meltdown.
+
+Son mode de fonctionnement est le suivant : 
+
+
+
+
 
 ## Spectre
 
