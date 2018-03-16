@@ -157,8 +157,28 @@ La manière dont cette "traduction" est réalisée (des segments de mémoire ré
 
 Nous pouvons donc maintenant rentrer dans le vif du sujet et aborder la première vulnérabilité : Meltdown.
 
+Il s'agit d'une vulnérabilité qui permet de briser l'isolation des processus par l'utilisation d'un canal auxiliaire (Side Channel Attack, en anglais). Elle permet donc de lire en mémoire vive des données appartennant à d'autres processus, voir même au noyau du système d'exploitation. En revanche, elle ne permet pas d'écrire quoi que ce soit, c'est purement un outil destiné à l'espionnage ou au vol de données sensibles, comme des mots de passe par exemple. 
+
+Elle a été découverte relativement indépendamment par des chercheurs du Google Project Zero (Jann Horn notamment) et des chercheurs de Cyberus Technology (Werner Haas, Thomas Prescher) ainsi que des chercheurs indépendants et de différentes universités (Daniel Gruss, Moritz Lipp, Stefan Mangard, Michael Schwarz, et Paul Kocher). Elle cible tous les ordinateurs disposant de processeurs Intel, et certaines puces ARM y sont aussi vulnérable. 
+
+
+
 Son mode de fonctionnement est le suivant : 
 
+1. On commence par créer un tableau de 256 cases, qui va servir le receptacle de l'attaque
+
+2. Par des méthodes que nous ne détaillerons pas, on peut empêcher le processeur de placer les adresses du tableau en mémoire cache. La plus simple consiste à utiliser des instructions bas niveau pour vider certaines adresses du cache.
+
+3. Ensuite, on va tenter de lire l'adresse mémoire cible, une adresse donc qui appartient à un autre programme ou au noyau de l'OS. Cette lecture est interdite, elle va donc provoquer le lancement d'une exception et, en temps normal, la terminaison du programme (on parle de page fault). Cependant, grâce à l'exécution spéculative, cette exception ne va pas être lancée immédiatement.
+
+4. Avant la page fault, on lit la valeur du tableau initial se trouvant à l'index égal à l'octet cible, obtenu à l'étape précédente. Cette étape n'est pas anodine car elle permet en fait de stocker en cache l'adresse mémoire lue.
+
+5. L'utilisation de l'adresse déclenche nécessairement la page fault, mais celle-ci est interceptée. Cependant, le résultat de l'exécution spéculative, c'est à dire l'adresse mémoire lue correspondant à la valeur de l'octet cible, est toujours situé en cache, il n'y a pas eu d'effacement du cache au moment de l'exception.
+
+6. Finalement, on va parcourir le tableau initial et mesurer le temps nécessaire à lecture des informations qui y sont stockées. L'index qui charge le plus rapidement sera celui qui était situé en cache et non en RAM, et comme nous avons bien fait attention à ne pas mettre d'adresses du tableau en cache, cela correspond nécessairement à la valeur de l'octet cible.
+
+
+Il y a donc un défaut dans la manière dont l'exécution spéculative est implémenté au niveau des composants.
 
 
 
@@ -217,13 +237,3 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tduboudi/Meltdown-Spectre/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
